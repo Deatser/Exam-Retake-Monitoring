@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Управление пересдачами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+				.button_exit {
+            background-color: #af0303;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+				.button_main {
+            background-color: #3f03af;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стиль для кнопки "Выйти" */
+        .button-logout {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+	<h1><a href="index.php">Управление пересдачами</a></h1>
+
+<div class="button-container">
+
+
+    <a href="create.php"class="button">Добавить предмет</a>
+    <a href="delete.php"class="button">Удалить предмет</a>
+    <a href="update.php" class="button">Обновить предмет</a>
+    <a href="index.php"class="button">Просмотреть таблицу</a>
+    <a href="logout.php"class="button_exit">Выйти</a>
+
+
+		
+</div>
+
+
+
+
+</body>
+</html>

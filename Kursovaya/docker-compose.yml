@@ -1,0 +1,45 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./web
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./web:/var/www/html
+    networks:
+      - app-network
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init-file.sql
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+
+  python:
+    image: python:3.9
+    volumes:
+      - ./python:/app
+    working_dir: /app
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
